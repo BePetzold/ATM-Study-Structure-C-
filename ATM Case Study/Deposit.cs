@@ -5,16 +5,11 @@ namespace ATM_Case_Study
     public class Deposit : Transaction
     {
         private decimal _amount;
-        private Keypad _keypad;
-        private DepositSlot _depositSlot;
         private const int CANCELED = 0;
 
-        public Deposit(int userAccountNumber, Screen atmScreen,
-            BankDatabase atmBankDatabase, Keypad atmKeypad, DepositSlot atmDepositSlot)
-            : base(userAccountNumber, atmBankDatabase, atmScreen)
+        public Deposit(int userAccountNumber, BankDatabase atmBankDatabase)
+                       : base(userAccountNumber, atmBankDatabase)
         {
-            _keypad = atmKeypad;
-            _depositSlot = atmDepositSlot;
         }
 
         public override void Execute()
@@ -27,7 +22,7 @@ namespace ATM_Case_Study
                 Screen.DisplayDollarAmount(_amount);
                 Screen.DisplayMessageLine(" in the deposit slot.");
 
-                bool envelopeReceived = _depositSlot.IsEnvelopeReceived;
+                bool envelopeReceived = DepositSlot.IsEnvelopeReceived;
 
                 if (envelopeReceived)
                 {
@@ -51,7 +46,7 @@ namespace ATM_Case_Study
         private decimal PromptForDepositAmount()
         {
             Screen.DisplayMessageLine("Please input a deposit amount in CENTS (or 0 to cancel): ");
-            int input = _keypad.GetInput();
+            int input = Keypad.GetInput();
             return input == CANCELED ? CANCELED : input / 100M;
         }
     }

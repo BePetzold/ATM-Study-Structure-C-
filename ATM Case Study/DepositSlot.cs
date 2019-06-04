@@ -2,6 +2,6 @@
 {
     public class DepositSlot
     {
-        public bool IsEnvelopeReceived { get { return true; } }
+        public static bool IsEnvelopeReceived { get { return true; } }
     }
 }

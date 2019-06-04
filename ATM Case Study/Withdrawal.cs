@@ -6,17 +6,11 @@ namespace ATM_Case_Study
     public class Withdrawal : Transaction
     {
         private decimal _amount;
-        private Keypad _keypad;
-        private CashDispenser _cashDispenser;
-
         private const int CANCELED = 6;
 
-        public Withdrawal(int userAccount, Screen atmScreen,
-              BankDatabase atmBankDatabase, Keypad atmKeypad, CashDispenser atmCashDispenser)
-            : base(userAccount, atmBankDatabase, atmScreen)
+        public Withdrawal(int userAccount, BankDatabase atmBankDatabase)
+            : base(userAccount, atmBankDatabase)
         {
-            _keypad = atmKeypad;
-            _cashDispenser = atmCashDispenser;
         }
 
         private int DisplayMenuOfAmounts()
@@ -37,7 +31,7 @@ namespace ATM_Case_Study
                 Screen.DisplayMessageLine("6 - Cancel transaction");
                 Screen.DisplayMessage("\nChoose a withdrawal amount: ");
 
-                int input = _keypad.GetInput();
+                int input = Keypad.GetInput();
 
                 switch (input)
                 {
@@ -77,10 +71,10 @@ namespace ATM_Case_Study
                     availableBalance = bankDatabase.getAvailableBalance(AccountNumber);
                     if (_amount <= availableBalance)
                     {
-                        if (_cashDispenser.IsSufficiantCashAvailable(_amount))
+                        if (CashDispenser.IsSufficiantCashAvailable(_amount))
                         {
                             bankDatabase.Debit(AccountNumber, _amount);
-                            _cashDispenser.DispenseCash(_amount);
+                            CashDispenser.DispenseCash(_amount);
                             isCashDispensed = true;
 
                             Screen.DisplayMessageLine("\nYour cash has been dispensed. Please take your cash now.");

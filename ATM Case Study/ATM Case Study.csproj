@@ -50,6 +50,7 @@
     <Compile Include="BankDatabase.cs" />
     <Compile Include="CashDispenser.cs" />
     <Compile Include="Autentication.cs" />
+    <Compile Include="MenuOption.cs" />
     <Compile Include="Deposit.cs" />
     <Compile Include="DepositSlot.cs" />
     <Compile Include="Keypad.cs" />

@@ -1,9 +1,12 @@
 #backlog
-Classe de Menu separada da classe de ATM
-Classe de Autentication separada da classe de ATM
-Classe de Autentication recebe AutenticateUser da classe BankDataBase
-Classe tornar classe de Screen em uma classe de mensagens
-Rename Class Program para ATMStarter
+  - Classe Menu separada da classe de ATM
+√ - Classe Autentication separada da classe de ATM
+√ - Classe Autentication recebe AutenticateUser da classe 			BankDataBase
+√ - Tornar metodos das classes Screen, Keypad, CashDispender e 		DepositSlot em estaticos
+√ - Rename Class Program para ATMStarter
+√ - Classe MenuOptions separada da classe de ATM
+  - 
+
 
 #fluxograma
 Começa pelo Run

@@ -4,23 +4,22 @@ namespace ATM_Case_Study
 {
     public class BalanceInquiry : Transaction
     {
-        public BalanceInquiry(int userAccountNumber, Screen atmScreen, BankDatabase atmBankDatabase) 
-            : base(userAccountNumber, atmBankDatabase, atmScreen) { }
+        public BalanceInquiry(int userAccountNumber, BankDatabase atmBankDatabase) 
+                              : base(userAccountNumber, atmBankDatabase) { }
 
         public override void Execute()
         {
             BankDatabase bankDatabase = base.BankDatabase;
-            Screen screen = base.Screen;
 
             decimal availableBalance = bankDatabase.getAvailableBalance(AccountNumber);
             decimal totalBalance = bankDatabase.getTotalBalance(AccountNumber);
 
-            screen.DisplayMessageLine("\nBalance Information:");
-            screen.DisplayMessage(" - Available balance: ");
-            screen.DisplayDollarAmount(availableBalance);
-            screen.DisplayMessage("\n - Total balance:     ");
-            screen.DisplayDollarAmount(totalBalance);
-            screen.DisplayMessageLine(string.Empty);
+            Screen.DisplayMessageLine("\nBalance Information:");
+            Screen.DisplayMessage(" - Available balance: ");
+            Screen.DisplayDollarAmount(availableBalance);
+            Screen.DisplayMessage("\n - Total balance:     ");
+            Screen.DisplayDollarAmount(totalBalance);
+            Screen.DisplayMessageLine(string.Empty);
 
             Sleep(5000);
         }
