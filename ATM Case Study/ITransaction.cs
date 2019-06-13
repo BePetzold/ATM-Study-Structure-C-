@@ -1,11 +1,11 @@
 ﻿namespace ATM_Case_Study
 {
-    public abstract class Transaction
+    public abstract class ITransaction
     {
         public int AccountNumber { get; private set; }
         public BankDatabase BankDatabase { get; private set; }
         
-        public Transaction(int userAccountNumber, BankDatabase atmBankDatabase)
+        public ITransaction(int userAccountNumber, BankDatabase atmBankDatabase)
         {
             this.AccountNumber = userAccountNumber;
             this.BankDatabase = atmBankDatabase;

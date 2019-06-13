@@ -46,20 +46,22 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="ATM.cs" />
-    <Compile Include="BalanceInquiry.cs" />
+    <Compile Include="Transactions\BalanceInquiry.cs" />
     <Compile Include="BankDatabase.cs" />
-    <Compile Include="CashDispenser.cs" />
+    <Compile Include="ATMComponents\CashDispenser.cs" />
     <Compile Include="Autentication.cs" />
     <Compile Include="MenuOption.cs" />
-    <Compile Include="Deposit.cs" />
-    <Compile Include="DepositSlot.cs" />
-    <Compile Include="Keypad.cs" />
+    <Compile Include="Transactions\Deposit.cs" />
+    <Compile Include="ATMComponents\DepositSlot.cs" />
+    <Compile Include="ATMComponents\Keypad.cs" />
     <Compile Include="ATMStarter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen.cs" />
-    <Compile Include="Transaction.cs" />
-    <Compile Include="Withdrawal.cs" />
+    <Compile Include="ATMComponents\Screen.cs" />
+    <Compile Include="Transactions\Transaction.cs" />
+    <Compile Include="Transactions\TransactionAdapter.cs" />
+    <Compile Include="Transactions\Withdrawal.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

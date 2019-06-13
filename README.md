@@ -2,7 +2,7 @@
   - Classe Menu separada da classe de ATM
 √ - Classe Autentication separada da classe de ATM
 √ - Classe Autentication recebe AutenticateUser da classe 			BankDataBase
-√ - Tornar metodos das classes Screen, Keypad, CashDispender e 		DepositSlot em estaticos
+√ - Tornar metodos das classes Screen, Keypad, CashDispender e DepositSlot em estaticos
 √ - Rename Class Program para ATMStarter
 √ - Classe MenuOptions separada da classe de ATM
   - 

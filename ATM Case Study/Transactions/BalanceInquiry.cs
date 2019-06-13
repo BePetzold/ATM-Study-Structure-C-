@@ -13,7 +13,7 @@ namespace ATM_Case_Study
 
             decimal availableBalance = bankDatabase.getAvailableBalance(AccountNumber);
             decimal totalBalance = bankDatabase.getTotalBalance(AccountNumber);
-
+            
             Screen.DisplayMessageLine("\nBalance Information:");
             Screen.DisplayMessage(" - Available balance: ");
             Screen.DisplayDollarAmount(availableBalance);

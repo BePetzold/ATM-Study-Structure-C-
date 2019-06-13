@@ -11,6 +11,6 @@ namespace ATM_Case_Study
         BalanceInquiry = 1,
         Withdrawal = 2,
         Deposit = 3,
-        Exit = 4
-    };
+        Exit = 4,
+    }
 }
